@@ -33,7 +33,7 @@ if (!fsSync.existsSync(fst)) {
   console.error(`${fst} file not found`)
   process.exit(1);
 }
-const model ="G_60000.int8.onnx"
+const model ="G_60000.onnx"
 if (!fsSync.existsSync(model)) {
   console.error(`${model} file not found`)
   process.exit(1);
