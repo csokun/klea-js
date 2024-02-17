@@ -1,9 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import { tts } from './model.js';
-const app = express();
 
 const HOST= process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || 3000;
+
+const app = express();
+app.use(cors());
 
 app.get('/:word', async (req, res) => {
     if(req.params.word){
