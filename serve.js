@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 app.get('/:word', async (req, res) => {
-    if(req.params.word){
+    if(req.params.word && req.params.word.length <= 80){
         console.log(`Received request for ${req.params.word}`)
         const buffer = await tts(req.params.word);
         // TODO: convert to mp3 | ogg if need be
